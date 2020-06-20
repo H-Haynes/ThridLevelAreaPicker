@@ -44,12 +44,12 @@
 ## 效果演示
 
 基础效果:
-![alt 全部选中](img/test1.png)
+![alt 全部选中](https://raw.githubusercontent.com/HehongGit/ThridLevelAreaPicker/master/img/test1.png)
 
 含市级选中计数:
-![alt 全部选中](img/test2.png)
+![alt 全部选中](https://raw.githubusercontent.com/HehongGit/ThridLevelAreaPicker/master/img/test2.png)
 
 可进行全部选中:
-![alt 全部选中](img/test3.png)
+![alt 全部选中](https://raw.githubusercontent.com/HehongGit/ThridLevelAreaPicker/master/img/test3.png)
 
 市、区级数据满选后自动勾选全部并去除该级所有单个选中
