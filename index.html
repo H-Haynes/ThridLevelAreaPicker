@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三级地址多选插件演示</title>
+    <script src="src/jQuery-3.3.1.js"></script>
+    <script src="src/area.js"></script>
+    <script src="src/areaPicker.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .result{
+            position: fixed;
+            left:0;
+            top:100px;
+            height:500px;
+            overflow-y:scroll;
+            width:300px;
+            background:#f6f8fa;
+            border:1px solid #f1f2f6;
+        }
+        .trigger{
+            width:120px;
+            height:36px;
+            line-height:36px;
+            border-radius:5px;
+            text-align: center;
+            bordeR:1px solid #07c600;
+            color:#07c600;
+            background:#f1f2f6;
+            cursor:pointer;
+        }
+        .trigger:hover{
+            background:#fff;
+            color:aquamarine;
+            border-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <span class="trigger">选择地址</span>
+    <div class="result">
+
+    </div>
+</body>
+
+<script>
+    $(function(){
+        window.AreaPickerData  = [];    //用于设置已选项，可用作回显
+        $(".trigger").click(function(){
+            
+            ShowAreaPicker(function(data){
+                console.log(data);  //data为最终数据,
+                window.AreaPickerData = data;   //为了再次打开时设置已选择的项目,记得将已选列表重新赋值
+                var str = JSON.stringify(data);
+                str = str.replace(/,/g,',<br/>&nbsp;&nbsp;');
+                str = str.replace(/{/g,'{<br/>&nbsp;&nbsp;');
+                str = str.replace(/}\]/g,"}]<br/>")
+                $(".result").html(str);
+            })
+        })
+
+    })
+</script>
+</html>
